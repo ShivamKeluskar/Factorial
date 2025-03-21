@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/omkargarud1908/Factorial.git'
+                git branch: 'main', url: 'https://github.com/ShivamKeluskar/Factorial.git'
             }
         }
 
@@ -55,14 +55,14 @@ pipeline {
     post { 
          success {
             emailext(
-                to: 'omkargarud8833@gmail.com',
+                to: 'shivamkeluskar2002@gmail.com',
                 subject: 'Jenkins Build Success',
                 body: 'The factorial application has been successfully built and deployed to Tomcat.'
             )
         }
         failure {
             emailext(
-                to: 'omkargarud8833@gmail.com',
+                to: 'shivamkeluskar2002@gmail.com',
                 subject: 'Jenkins Build Failed',
                 body: 'The build or deployment process failed. Please check the logs.'
             )
